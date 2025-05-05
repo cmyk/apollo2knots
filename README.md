@@ -69,6 +69,8 @@ Backup you existing bitcoind:
 sudo  cp /opt/apolloapi/backend/node/bitcoind ~/bitcoind.backup
 ```
 
+## 💾 Step 4: Replace Core binary with Knots
+
 Unpack the tar.gz, replace core bitcoind with knots bitcoind and set x bit:
 
 ```sh
