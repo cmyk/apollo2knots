@@ -35,6 +35,7 @@ wget https://bitcoinknots.org/files/28.x/28.1.knots20250305/bitcoin-28.1.knots20
 wget https://bitcoinknots.org/files/28.x/28.1.knots20250305/SHA256SUMS.asc
 wget https://bitcoinknots.org/files/28.x/28.1.knots20250305/SHA256SUMS
 ```
+
 2.1 Download developer signatures and import them:
 ```sh
 wget https://raw.githubusercontent.com/bitcoinknots/guix.sigs/knots/builder-keys/chrisguida.gpg
@@ -43,9 +44,29 @@ gpg --import chrisguida.gpg
 wget https://raw.githubusercontent.com/bitcoinknots/guix.sigs/knots/builder-keys/luke-jr.gpg
 gpg --import luke-jr.gpg
 ```
-2.2. Verify the download:
+Check fingerprints like this:
+```sh
+gpg --fingerprint "Luke"
+```
+Expected (for Luke Dashjr):
+```sh
+pub   ed25519 2023-02-25 [SC] [expired: 2025-03-25]
+      1A3E 761F 19D2 CC77 85C5  502E A291 A2C4 5D0C 504A
+uid           [ expired] Luke Dashjr (Codesigning) <luke-jr+git@utopios.org>
+```
+
+2.2 This ensures the SHA256SUMS file hasn’t been tampered with:
 ```sh
 gpg --verify SHA256SUMS.asc SHA256SUMS
+```
+2.3 Verify the download:
+This checks the actual file (bitcoin-28.1.knots20250305-aarch64-linux-gnu.tar.gz) against the signed hash — this is the most important step to prevent supply chain attacks.
+```sh
+sha256sum -c --ignore-missing SHA256SUMS
+```
+Shoud output:
+```sh
+bitcoin-28.1.knots20250305-aarch64-linux-gnu.tar.gz: OK
 ```
 
 ## 🛑 Step 2: Stop Miner and Node
