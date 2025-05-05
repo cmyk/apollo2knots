@@ -44,6 +44,12 @@ gpg --import chrisguida.gpg
 wget https://raw.githubusercontent.com/bitcoinknots/guix.sigs/knots/builder-keys/luke-jr.gpg
 gpg --import luke-jr.gpg
 ```
+
+Refresh the signatures:
+```sh
+gpg --keyserver hkps://keys.openpgp.org --refresh-keys A291A2C45D0C504A
+```
+
 Check fingerprints like this:
 ```sh
 gpg --fingerprint "Luke"
