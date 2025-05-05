@@ -70,7 +70,7 @@ This checks the actual file (bitcoin-28.1.knots20250305-aarch64-linux-gnu.tar.gz
 ```sh
 sha256sum -c --ignore-missing SHA256SUMS
 ```
-Shoud output:
+Should output:
 ```sh
 bitcoin-28.1.knots20250305-aarch64-linux-gnu.tar.gz: OK
 ```
