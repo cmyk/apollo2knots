@@ -47,7 +47,7 @@ gpg --import luke-jr.gpg
 
 Refresh the signatures:
 ```sh
-gpg --keyserver hkps://keys.openpgp.org --refresh-keys A291A2C45D0C504A
+gpg --keyserver hkps://keys.openpgp.org --refresh-keys
 ```
 
 Check fingerprints like this:
