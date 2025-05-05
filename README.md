@@ -89,6 +89,10 @@ You should now see the new version reported in the GUI as:
 ## 🛠️ Step 6: Tweak your bitcoind.conf with knots options:
 
 ```sh
+sudo vim /opt/apolloapi/backend/node/bitcoin.conf
+```
+
+```sh
 # Block NFT/Ordinal-style junk
 rejectnonstdoutputs=1
 datacarrier=0
